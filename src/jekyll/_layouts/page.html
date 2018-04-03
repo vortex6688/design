@@ -1,0 +1,35 @@
+---
+layout: home-page
+---
+
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; background: #000;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
+    <link rel="canonical" href="http://example.com/">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="http://example.com/feed.xml">
+</head>
+
+<body class="h-100 d-flex flex-column m-auto" style="max-width: 1200px;">
+
+  {% include header.html %}
+
+  <section style="flex: 1;">
+      {{ content }}
+  </section>
+
+<!-- mobile section -->
+  <section>
+
+  </section>
+
+	{% include footer.html %}
+</body>
+</html>

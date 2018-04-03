@@ -1,0 +1,14 @@
+nav {
+  background: #3cc0c2;
+
+  a {
+    color: #000;
+    text-decoration: none;
+    font-size: $font-size-xlg;
+
+    &:hover {
+      color: #b48505;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.project {
+  transform: scale(1);
+  transition: 0.75s;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: 'View Details';
+    position: absolute;
+    opacity: 0;
+    transition: 0.75s;
+    background: rgba(255,255,255,0.85);
+    font-size: $font-size-xlg;
+    color: #b48505;
+    border-radius: 1.75em;
+    font-weight: bold;
+    padding: 0.125em 0.75em 0.25em;
+
+    @include media-breakpoint-down(md) {
+      font-size: $font-size-base;
+      padding: 0 0.25em 0;
+    }
+  }
+
+  &:hover {
+    transform: scale(0.95);
+    transition: 0.75s;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+
+  
+}
