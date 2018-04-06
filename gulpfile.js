@@ -38,7 +38,7 @@ gulp.task('images', () =>
 );
 
 // Build Jekyll Dev
-gulp.task('build-jekyll-dev', shell.task(['bundle exec jekyll build --baseurl "/design" --incremental']));
+gulp.task('build-jekyll-dev', shell.task(['bundle exec jekyll build --baseurl "" --incremental']));
 
 // Build Jekyll Prod
 //gulp.task('build-jekyll-prod', shell.task(['bundle exec jekyll build --baseurl "/dance"']));

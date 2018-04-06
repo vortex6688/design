@@ -1,14 +1,31 @@
-nav {
+header {
   background: #3cc0c2;
+  min-height: 12em;
+
+  .title {
+    white-space: nowrap;
+  }
 
   a {
     color: #000;
     text-decoration: none;
-    font-size: $font-size-xlg;
+    font-size: $font-size-lg;
 
     &:hover {
       color: #b48505;
       text-decoration: none;
+    }
+  }
+
+  &.desktop {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    @include media-breakpoint-up(md) {
+      display: none;
     }
   }
 }

@@ -9,54 +9,85 @@
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
-    <link rel="stylesheet" href="/design/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="canonical" href="http://example.com/">
     <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://example.com/feed.xml">
 </head>
 
-<body class="h-100 d-flex flex-column m-auto" style="max-width: 1200px;">
+<body class="h-100 d-flex flex-column m-auto">
 
-  <header>
-  <nav class="row flex-column flex-md-row align-items-center px-5 m-0">
-    <img class="col-auto p-md-2 my-1 mx-md-4" style="width: 4em;" src="/design/images/logo.png" />
+    <!-- desktop nav -->
+<header class="row align-items-center py-5 px-4 m-0 desktop">
+  <div class="d-flex col-5 title">
+    <img class="col-4" style="max-width: 6em; height: 100%;" src="/images/logo.png" />
+    <div class="d-flex flex-column">
+      <h2 href="#">Butcher Team</h2>
+      <h2 href="#"><b>Is The Best</b></h2>
+    </div>
+  </div>  
+  <nav class="d-flex col-4 align-self-end justify-content-end pb-2">
+    <a class="col-auto" href="#"><b>PROJECTS</b></a>
+    <a class="col-auto" href="#"><b>CONTACT</b></a>
+  </nav>
+  <div class="d-flex flex-wrap col-3">
+    <div class="col-12 pb-3 text-right">
+      <img class="px-2" style="max-height: 2em; height: 100%;" src="/images/github-512.png" />
+      <img class="px-2" style="max-height: 2em; height: 100%;" src="/images/github-512.png" />
+    </div>
+    <div class="col-12 pb-3 text-right">
+      <img class="px-2" style="max-height: 2em; height: 100%;" src="/images/github-512.png" />
+      <img class="px-2" style="max-height: 2em; height: 100%;" src="/images/github-512.png" />
+    </div>
+  </div>
+</header>
+
+
+
+
+  <!-- mobile nav 
+<header>
+  <nav class="row flex-column align-items-center px-5 m-0 mobile hidden">
+    <img class="col-auto mb-1 mt-2" style="width: 4em;" src="/images/logo.png" />
     <a class="col-auto" href="#"><b>WORK</b></a>
     <a class="col-auto" href="#"><b>ABOUT</b></a>
     <a class="col-auto" href="#"><b>CONTACT</b></a>
   </nav>
 </header>
 
+-->
+
   <section style="flex: 1;">
       <section>
   <div class="row m-0">
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-1.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-1.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-2.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-2.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-3.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-3.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-4.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-4.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-5.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-5.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-6.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-6.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-7.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-7.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-8.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-8.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-9.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-9.jpg" />
     </div>
-    <div class="project col-6 col-md-4 p-0 d-flex flex-column justify-content-center align-items-center">
-      <img style="max-width: 100%;" src="/design/images/example-10.jpg" />
+    <div class="project col-6 col-sm-4 col-md-3 p-0 d-flex flex-column justify-content-center align-items-center">
+      <img style="max-width: 100%;" src="/images/example-10.jpg" />
     </div>
   </div>
 </section>
@@ -69,8 +100,8 @@
 
 	<footer class="footer d-flex">
 	<section class="align-self-center m-auto">
-		<div class="copyright text-center py-2">
-			<span>&#169 All rights reserved Butcher Team, New York (2018)</span>
+		<div class="text-center py-2">
+			<span style="color: #fff;">&#169 All rights reserved Butcher Team, New York (2018)</span>
 		</div>
 	</section>
 </footer>
