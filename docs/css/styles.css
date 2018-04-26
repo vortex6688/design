@@ -3454,22 +3454,63 @@ a.text-dark:hover, a.text-dark:focus {
 .invisible {
   visibility: hidden !important; }
 
-header {
+header.desktop {
   background: #3cc0c2;
-  min-height: 12em; }
-  header .title {
-    white-space: nowrap; }
-  header a {
+  min-height: 12em;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1020;
+  transition: all 0.5s ease-out; }
+  header.desktop .title {
+    white-space: nowrap;
+    opacity: 1;
+    transition: all 0.5s ease-in; }
+  header.desktop .logo {
+    max-width: 6em;
+    height: 100%;
+    transition: all 0.5s ease-in; }
+  header.desktop .social div {
+    padding: 0 0 1em;
+    transition: all 0.5s ease-in; }
+  header.desktop a {
     color: #000;
     text-decoration: none;
     font-size: 1.25rem; }
-    header a:hover {
+    header.desktop a:hover {
       color: #b48505;
       text-decoration: none; }
-  @media (max-width: 767.98px) {
+  header.desktop.collapsed {
+    min-height: 6em;
+    transition: all 0.5s ease-out; }
+    header.desktop.collapsed .logo {
+      max-width: 5em;
+      height: 100%;
+      transition: all 0.5s ease-out; }
+    header.desktop.collapsed .title {
+      opacity: 0;
+      height: 0;
+      margin-top: -0.75em;
+      transition: all 0.5s ease-out; }
+    header.desktop.collapsed .social div {
+      padding: 0.275em 0;
+      transition: all 0.5s ease-out; }
+  @media (max-width: 991.98px) {
     header.desktop {
       display: none; } }
-  @media (min-width: 768px) {
+
+header.mobile {
+  background: #3cc0c2;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1020;
+  transition: all 0.5s ease-out;
+  min-height: 3.5em; }
+  header.mobile .logo {
+    width: auto;
+    height: 2.5em; }
+  @media (min-width: 992px) {
     header.mobile {
       display: none; } }
 
@@ -3489,10 +3530,6 @@ header {
     border-radius: 1.75em;
     font-weight: bold;
     padding: 0.125em 0.75em 0.25em; }
-    @media (max-width: 991.98px) {
-      .project::before {
-        font-size: 1rem;
-        padding: 0 0.25em 0; } }
   .project:hover {
     transform: scale(0.95);
     transition: 0.75s; }

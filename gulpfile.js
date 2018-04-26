@@ -6,6 +6,7 @@ var imagemin    = require('gulp-imagemin');
 var shell       = require('gulp-shell');
 
 // Static Server + watching scss/html files
+// Build Dev 
 gulp.task('serve', ['build-jekyll-dev', 'sass', 'images'], function() {
 
     browserSync.init({
@@ -19,7 +20,7 @@ gulp.task('serve', ['build-jekyll-dev', 'sass', 'images'], function() {
 });
 
 // Build production version for GH pages
-// gulp.task('build-prod', ['build-jekyll-prod', 'sass', 'images'], function() {});
+gulp.task('prod', ['build-jekyll-prod', 'sass', 'images']);
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
@@ -41,7 +42,7 @@ gulp.task('images', () =>
 gulp.task('build-jekyll-dev', shell.task(['bundle exec jekyll build --baseurl "" --incremental']));
 
 // Build Jekyll Prod
-//gulp.task('build-jekyll-prod', shell.task(['bundle exec jekyll build --baseurl "/dance"']));
+gulp.task('build-jekyll-prod', shell.task(['bundle exec jekyll build --baseurl "/design" --incremental']));
 
 // Project Build Options
 gulp.task('default', ['serve']);

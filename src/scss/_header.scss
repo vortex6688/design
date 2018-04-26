@@ -1,9 +1,28 @@
-header {
+//Desktop header
+header.desktop {
   background: #3cc0c2;
   min-height: 12em;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: $zindex-sticky;
+  transition: all 0.5s ease-out;
 
   .title {
     white-space: nowrap;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+
+  .logo {
+    max-width: 6em;
+    height: 100%;
+    transition: all 0.5s ease-in;
+  }
+
+  .social div {
+    padding: 0 0 1em;
+    transition: all 0.5s ease-in;
   }
 
   a {
@@ -17,15 +36,54 @@ header {
     }
   }
 
-  &.desktop {
-    @include media-breakpoint-down(sm) {
-      display: none;
+// collapsed state applied
+  &.collapsed {
+    min-height: 6em;
+    transition: all 0.5s ease-out;
+
+    .logo {
+      max-width: 5em;
+      height: 100%;
+      transition: all 0.5s ease-out;
+    }
+
+    .title {
+      opacity: 0;
+      height: 0;
+      margin-top: -0.75em;
+      transition: all 0.5s ease-out;
+    }
+
+    .social div {
+      padding: 0.275em 0;
+      transition: all 0.5s ease-out;
     }
   }
 
-  &.mobile {
-    @include media-breakpoint-up(md) {
-      display: none;
-    }
+  // hide desktop header on the smaller / mobile screens
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+// Mobile header
+header.mobile {
+  background: #3cc0c2;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: $zindex-sticky;
+  transition: all 0.5s ease-out;
+  min-height: 3.5em;
+
+  .logo {
+    width: auto;
+    height: 2.5em;
+  }
+
+
+  // hide mobile header on the larger / desktop screens
+  @include media-breakpoint-up(lg) {
+    display: none;
   }
 }
