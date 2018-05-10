@@ -32,7 +32,7 @@ gulp.task('sass', function() {
 
 // Copy and reduce image size
 gulp.task('images', () =>
-    gulp.src('src/images/*')
+    gulp.src('src/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('docs/images'))
         .pipe(browserSync.stream())
