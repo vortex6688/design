@@ -1,3 +1,28 @@
+.content-margin {
+  height: 12em;
+  transition: all 0.5s ease-out;
+  background: #3cc0c2;
+
+  &.collapsed {
+    height: 6em;
+    transition: all 0.5s ease-in;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.mobile-content-margin {
+  height: 3.5em;
+  background: #3cc0c2;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+// Project module style rules
 .project {
   transform: scale(1);
   transition: 0.75s;
@@ -29,7 +54,8 @@
       opacity: 1;
     }
   }
+}
 
-
-  
+.similar-projects {
+  background: $white;
 }

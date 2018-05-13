@@ -25,7 +25,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: none; }
+  background-color: #fff; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -3457,10 +3457,10 @@ a.text-dark:hover, a.text-dark:focus {
 header.desktop {
   background: #3cc0c2;
   min-height: 12em;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1020;
+  z-index: 1030;
   transition: all 0.5s ease-out; }
   header.desktop .title {
     white-space: nowrap;
@@ -3473,11 +3473,11 @@ header.desktop {
   header.desktop .social div {
     padding: 0 0 1em;
     transition: all 0.5s ease-in; }
-  header.desktop a {
+  header.desktop nav a {
     color: #000;
     text-decoration: none;
     font-size: 1.25rem; }
-    header.desktop a:hover {
+    header.desktop nav a:hover {
       color: #b48505;
       text-decoration: none; }
   header.desktop.collapsed {
@@ -3489,8 +3489,6 @@ header.desktop {
       transition: all 0.5s ease-out; }
     header.desktop.collapsed .title {
       opacity: 0;
-      height: 0;
-      margin-top: -0.75em;
       transition: all 0.5s ease-out; }
     header.desktop.collapsed .social div {
       padding: 0.275em 0;
@@ -3501,7 +3499,7 @@ header.desktop {
 
 header.mobile {
   background: #3cc0c2;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1020;
@@ -3512,6 +3510,24 @@ header.mobile {
     height: 2.5em; }
   @media (min-width: 992px) {
     header.mobile {
+      display: none; } }
+
+.content-margin {
+  height: 12em;
+  transition: all 0.5s ease-out;
+  background: #3cc0c2; }
+  .content-margin.collapsed {
+    height: 6em;
+    transition: all 0.5s ease-in; }
+  @media (max-width: 991.98px) {
+    .content-margin {
+      display: none; } }
+
+.mobile-content-margin {
+  height: 3.5em;
+  background: #3cc0c2; }
+  @media (min-width: 992px) {
+    .mobile-content-margin {
       display: none; } }
 
 .project {
@@ -3535,3 +3551,10 @@ header.mobile {
     transition: 0.75s; }
     .project:hover::before {
       opacity: 1; }
+
+.similar-projects {
+  background: #fff; }
+
+footer {
+  background: #fff;
+  color: #000; }

@@ -2,10 +2,10 @@
 header.desktop {
   background: #3cc0c2;
   min-height: 12em;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
-  z-index: $zindex-sticky;
+  z-index: $zindex-fixed;
   transition: all 0.5s ease-out;
 
   .title {
@@ -25,7 +25,7 @@ header.desktop {
     transition: all 0.5s ease-in;
   }
 
-  a {
+  nav a {
     color: #000;
     text-decoration: none;
     font-size: $font-size-lg;
@@ -49,8 +49,6 @@ header.desktop {
 
     .title {
       opacity: 0;
-      height: 0;
-      margin-top: -0.75em;
       transition: all 0.5s ease-out;
     }
 
@@ -69,7 +67,7 @@ header.desktop {
 // Mobile header
 header.mobile {
   background: #3cc0c2;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: $zindex-sticky;

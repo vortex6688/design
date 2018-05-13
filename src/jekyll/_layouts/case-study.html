@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: case-study
 ---
 
 <!DOCTYPE html>
@@ -24,7 +24,24 @@ layout: page
     <div class="top"></div>
     <div class="content-margin"></div>
     <div class="mobile-content-margin"></div>
-      {{ content }}
+    {{ content }}
+  </section>
+
+  <section class="similar-projects">
+    <div class="row m-0 align-items-center justify-content-center pt-4 pb-2">
+      <h4>View Similar Projects</h4>
+    </div>
+    <div class="row m-0 align-items-center justify-content-center py-2">
+      <div class="col">
+        <img style="max-width: 100%;" src="{{site.baseurl}}/images/example-1.jpg" />
+      </div>
+      <div class="col">
+        <img style="max-width: 100%;" src="{{site.baseurl}}/images/example-2.jpg" />
+      </div>
+      <div class="col">
+        <img style="max-width: 100%;" src="{{site.baseurl}}/images/example-3.jpg" />
+      </div>
+    </div>
   </section>
 
 	{% include footer.html %}
