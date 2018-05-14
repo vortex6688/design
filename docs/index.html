@@ -45,25 +45,25 @@
 
   <!-- mobile nav -->
 <header class="header mobile">
-  <div class="row justify-content-between m-0">
-    <a href="/design/">
+  <div class="row justify-content-between m-0 covers-nav">
+    <a class="px-1" href="/design/">
       <img class="logo m-2" src="/design/images/logo.png" />
     </a>
     <div class="social d-flex align-items-center">
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
     </div>
-    <div class="menu-button">
+    <div class="menu-button" onclick="navTrigger()">
       <img class="m-2" style="max-height: 2.5em; height: 100%;" src="/design/images/menu-button.png" />
     </div>
   </div>
-  <!--<nav class="d-flex flex-column align-self-end justify-content-end pb-2">
+  <nav class="d-flex align-items-center justify-content-between pb-2">
     <a class="col-auto" href="/design/"><b>WORK</b></a>
     <a class="col-auto" href="/design/about"><b>ABOUT</b></a>
     <a class="col-auto" href="#"><b>CONTACT</b></a>
-  </nav>-->
+  </nav>
 </header>
 
   <section style="flex: 1; background: #fff;">
@@ -138,8 +138,16 @@
 			document.querySelector('.top').scrollIntoView({behavior: "smooth", block: "end"});
 		}
 
-		// force content margin to be smaller is 
-
+		// expand/collaps mobile menu
+		function navTrigger() {
+			document.querySelector("header.mobile").classList.toggle('nav-expand');
+			if (document.querySelector(".nav-expand")) {
+				document.querySelector(".mobile-content-margin").classList.add('expand');
+			} else {
+				document.querySelector(".mobile-content-margin").classList.remove('expand');
+			}
+		}
+		
 	</script>
 </footer>
 </body>

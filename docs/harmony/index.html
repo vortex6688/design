@@ -45,32 +45,32 @@
 
   <!-- mobile nav -->
 <header class="header mobile">
-  <div class="row justify-content-between m-0">
-    <a href="/design/">
+  <div class="row justify-content-between m-0 covers-nav">
+    <a class="px-1" href="/design/">
       <img class="logo m-2" src="/design/images/logo.png" />
     </a>
     <div class="social d-flex align-items-center">
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
-      <img class="mx-2" style="max-height: 2em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
+      <img class="mx-2" style="max-height: 1.8em; height: 100%;" src="/design/images/github-512.png" />
     </div>
-    <div class="menu-button">
+    <div class="menu-button" onclick="navTrigger()">
       <img class="m-2" style="max-height: 2.5em; height: 100%;" src="/design/images/menu-button.png" />
     </div>
   </div>
-  <!--<nav class="d-flex flex-column align-self-end justify-content-end pb-2">
+  <nav class="d-flex align-items-center justify-content-between pb-2">
     <a class="col-auto" href="/design/"><b>WORK</b></a>
     <a class="col-auto" href="/design/about"><b>ABOUT</b></a>
     <a class="col-auto" href="#"><b>CONTACT</b></a>
-  </nav>-->
+  </nav>
 </header>
 
   <section style="flex: 1; background: #fff;">
     <div class="top"></div>
     <div class="content-margin"></div>
     <div class="mobile-content-margin"></div>
-    <div class="row m-0 px-2 px-lg-5" style="background: #3cc0c2;">
+    <div class="row m-0 px-3 px-lg-5" style="background: #3cc0c2;">
   <h3>ECO Harmony</h3>
   <p>
     Description of the project... Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -147,8 +147,16 @@
 			document.querySelector('.top').scrollIntoView({behavior: "smooth", block: "end"});
 		}
 
-		// force content margin to be smaller is 
-
+		// expand/collaps mobile menu
+		function navTrigger() {
+			document.querySelector("header.mobile").classList.toggle('nav-expand');
+			if (document.querySelector(".nav-expand")) {
+				document.querySelector(".mobile-content-margin").classList.add('expand');
+			} else {
+				document.querySelector(".mobile-content-margin").classList.remove('expand');
+			}
+		}
+		
 	</script>
 </footer>
 </body>

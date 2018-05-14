@@ -3508,6 +3508,24 @@ header.mobile {
   header.mobile .logo {
     width: auto;
     height: 2.5em; }
+  header.mobile .covers-nav {
+    background: #3cc0c2; }
+  header.mobile nav {
+    height: 3.5em;
+    margin-top: -3.5em;
+    transition: all 0.5s ease-in;
+    position: relative;
+    z-index: -1; }
+    header.mobile nav a {
+      color: #000;
+      text-decoration: none; }
+      header.mobile nav a:hover {
+        color: #b48505;
+        text-decoration: none; }
+  header.mobile.nav-expand nav {
+    margin-top: 0;
+    transition: all 0.5s ease-out;
+    z-index: -1; }
   @media (min-width: 992px) {
     header.mobile {
       display: none; } }
@@ -3525,7 +3543,11 @@ header.mobile {
 
 .mobile-content-margin {
   height: 3.5em;
-  background: #3cc0c2; }
+  background: #3cc0c2;
+  transition: all 0.5s ease-in; }
+  .mobile-content-margin.expand {
+    height: 7em;
+    transition: all 0.5s ease-out; }
   @media (min-width: 992px) {
     .mobile-content-margin {
       display: none; } }
