@@ -35,28 +35,24 @@
   position: relative;
   cursor: pointer;
 
-  &::before {
-    content: 'View Details';
+  .project-title {
     position: absolute;
     opacity: 0;
     transition: 0.75s;
     background: rgba(255,255,255,0.85);
     font-size: $font-size-xlg;
     color: #b48505;
-    border-radius: 1.75em;
     font-weight: bold;
-    padding: 0.125em 0.75em 0.25em;
-
-    @include media-breakpoint-down(md) {
-
-    }
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 2em;
   }
 
   &:hover {
-    transform: scale(0.95);
     transition: 0.75s;
 
-    &::before {
+    .project-title {
       opacity: 1;
     }
   }
