@@ -7,7 +7,7 @@ var shell       = require('gulp-shell');
 
 // Static Server + watching scss/html files
 // Build Dev 
-gulp.task('serve', ['build-jekyll-dev', 'sass', 'images'], function() {
+gulp.task('serve', ['build-jekyll-dev', 'js', 'sass', 'images'], function() {
 
     browserSync.init({
         server: "./docs"
@@ -20,7 +20,12 @@ gulp.task('serve', ['build-jekyll-dev', 'sass', 'images'], function() {
 });
 
 // Build production version for GH pages
-gulp.task('prod', ['build-jekyll-prod', 'sass', 'images']);
+gulp.task('prod', ['build-jekyll-prod', 'js', 'sass', 'images']);
+
+gulp.task('js', function(){
+    return gulp.src('src/js/**/*.js')
+      .pipe(gulp.dest('docs/js'))
+  });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {

@@ -13,6 +13,7 @@
     <link rel="canonical" href="http://example.com/">
     <link rel="alternate" type="application/rss+xml" title="Vision Wizards" href="http://example.com/feed.xml">
     <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="/js/vendor/jquery.3.3.1.js"></script>
     <meta name="google-site-verification" content="4-oAT8EAPcH30JoKX0ihA11APE9twOHeW5yOUrkW-D0" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119886567-1"></script>
@@ -40,7 +41,7 @@
   <nav class="d-flex col-4 align-self-end justify-content-end pb-2">
     <a class="col-auto" href="/"><b>WORK</b></a>
     <a class="col-auto" href="/about"><b>ABOUT</b></a>
-    <a class="col-auto" href="#"><b>CONTACT</b></a>
+    <a class="col-auto" href="/contact"><b>CONTACT</b></a>
   </nav>
   <div class="social d-flex flex-wrap col-3">
     <div class="row col-12 justify-content-end">
@@ -73,7 +74,7 @@
   <nav class="d-flex align-items-center justify-content-between pb-2">
     <a class="col-auto" href="/"><b>WORK</b></a>
     <a class="col-auto" href="/about"><b>ABOUT</b></a>
-    <a class="col-auto" href="#"><b>CONTACT</b></a>
+    <a class="col-auto" href="/contact"><b>CONTACT</b></a>
   </nav>
 </header>
 
@@ -127,7 +128,7 @@
 
 	<footer class="footer">
 	<div class="row m-0 align-items-center justify-content-center pt-4">
-		<button class="btn" onclick="scrollNavigate()">
+		<button class="btn back-to-top d-none" onclick="scrollNavigate()">
 			<h5 class="m-0">&uarr; Back To Top</h5>
 		</button>
 	</div>
@@ -151,6 +152,15 @@
 			}
 		});
 
+		// Hide "back to top" button if it's not needed
+		window.addEventListener("scroll", function() {
+			if (window.scrollY > 200) {
+				document.querySelector(".back-to-top").classList.remove('d-none');
+			}
+			else {
+				document.querySelector(".back-to-top").classList.add('d-none');
+			}
+		});
 		// Smooth scrolling back to top
 		function scrollNavigate() {
 			document.querySelector('.top').scrollIntoView({behavior: "smooth", block: "end"});
@@ -166,6 +176,41 @@
 			}
 		}
 		
+		// Contact Form Ajax
+
+		$('#contact-form').submit(function(e) {
+			var name = document.getElementById('name'),
+					email = document.getElementById('email'),
+					message = document.getElementById('message');
+
+			if (!name.value) {
+				console.log("Please enter your name...");
+				document.querySelector(".error-sending-message").innerHTML="Please enter your name...";
+				e.preventDefault()
+			} else if (!email.value) {
+				console.log("Email field cannot be empty...");
+				document.querySelector(".error-sending-message").innerHTML="Email field cannot be empty...";
+				e.preventDefault()
+			} else if (!message.value) {
+				console.log("Please enter your message...");
+				document.querySelector(".error-sending-message").innerHTML="Please enter your message...";
+				e.preventDefault()
+			} else {
+				$.ajax({
+					url: "https://formspree.io/visionwizards@gmail.com", 
+					method: "POST",
+					data: $(this).serialize(),
+					dataType: "json"
+				});
+
+				e.preventDefault()
+				$(this).get(0).reset()
+				console.log("message sent!!!");
+				document.querySelector(".error-sending-message").innerHTML="Your Message Has Been Succesfully Sent!!!";
+				document.querySelector(".error-sending-message").classList.remove('text-danger');
+				document.querySelector(".error-sending-message").classList.add('text-success');
+			}
+		});
 	</script>
 </footer>
 </body>
