@@ -3542,11 +3542,11 @@ header.mobile {
       display: none; } }
 
 .mobile-content-margin {
-  height: 3.5em;
+  height: 7.25em;
   background: #3cc0c2;
   transition: all 0.5s ease-in; }
   .mobile-content-margin.expand {
-    height: 7em;
+    height: 10.75em;
     transition: all 0.5s ease-out; }
   @media (min-width: 992px) {
     .mobile-content-margin {
