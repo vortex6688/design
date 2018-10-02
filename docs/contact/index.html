@@ -107,7 +107,7 @@
       <label class="py-2">Your Message</label>
       <textarea rows="5" type="text" name="message" id="message"></textarea>
       <input class="my-2 mx-auto col-4" type="submit" value="send">
-      <p class="error-sending-message text-danger" style="height: 0;"></p>
+      <p class="error-sending-message text-danger" style="height: 1em;"></p>
       <input type="text" name="_gotcha" style="display:none" />
     </form> 
   </div>
@@ -125,7 +125,7 @@
 	<script>
 		// collapse desktop header when page is being scroll down
 		window.addEventListener("scroll", function() {
-			if (window.scrollY > 0) {
+			if (window.scrollY > 20) {
 				document.querySelector(".header").classList.add('collapsed');
 				document.querySelector(".header").classList.remove('py-5');
         document.querySelector(".header").classList.add('py-1');

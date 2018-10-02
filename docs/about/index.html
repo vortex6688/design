@@ -96,10 +96,12 @@
     <div class="row justify-content-center">
       <h4 class="col-12 py-4">Meet Our Team</h4>
       <div class="col-lg col-12">
+        <img style="width: 20em;" class="rounded-circle" src="/images/sasha.png" />
         <h4>Sasha Zhukova</h4>
         <p>Designer</p>
       </div>
       <div class="col-lg col-12">
+        <img style="width: 20em;" class="rounded-circle" src="/images/matt.png" />
         <h4>Matvey Kuzovkin</h4>
         <p>Front End Developer</p>
       </div>
@@ -124,7 +126,7 @@
 	<script>
 		// collapse desktop header when page is being scroll down
 		window.addEventListener("scroll", function() {
-			if (window.scrollY > 0) {
+			if (window.scrollY > 20) {
 				document.querySelector(".header").classList.add('collapsed');
 				document.querySelector(".header").classList.remove('py-5');
         document.querySelector(".header").classList.add('py-1');
